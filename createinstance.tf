@@ -52,7 +52,7 @@ resource "aws_security_group" "allow_elk" {
 #Create AWS Instance
 resource "aws_instance" "elk-instance" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
-  instance_type = "m4.large"
+  instance_type = "t2.xlarge"
   availability_zone = "us-east-1a"
   key_name      = aws_key_pair.monitoring-sme-elk.key_name
 
